@@ -4,17 +4,11 @@ const TELEGRAM_TOKEN = process.env.TELEGRAM_TOKEN;
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
 
 const bot = new TelegramBot(TELEGRAM_TOKEN, {
-  polling: {
-    autoStart: true,
-    interval: 300,
-    params: {
-      timeout: 10,
-    },
-  },
+  polling: true,
 });
 
 bot.on("polling_error", (error) => {
-  console.error("Polling error:", error?.message || error);
+  console.error("Polling error:", error.message);
 });
 
 bot.on("message", async (msg) => {
@@ -25,12 +19,11 @@ bot.on("message", async (msg) => {
 
   try {
     const response = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent`,
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${GEMINI_API_KEY}`,
       {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "x-goog-api-key": GEMINI_API_KEY,
         },
         body: JSON.stringify({
           contents: [
@@ -54,4 +47,8 @@ bot.on("message", async (msg) => {
       "Sorry, I could not generate a reply.";
 
     await bot.sendMessage(chatId, reply);
-  } catch (
+  } catch (error) {
+    console.error("Message handler error:", error);
+    await bot.sendMessage(chatId, "Something went wrong. Please try again.");
+  }
+});
