@@ -644,11 +644,19 @@ function isGroup(chat) {
 }
 
 function getDisplayName(msg) {
+  const isGroup = msg.chat.type === "group" || msg.chat.type === "supergroup";
   const first = msg.from?.first_name?.trim();
   const username = msg.from?.username?.trim();
 
+  // Group → prefer @username
+  if (isGroup) {
+    if (username) return `@${username}`;
+    return ""; // no fake tag if no username
+  }
+
+  // DM → use first name
   if (first) return first;
-  if (username) return `@${username}`;
+
   return "";
 }
 
