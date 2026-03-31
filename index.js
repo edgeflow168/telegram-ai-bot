@@ -19,7 +19,7 @@ const PERSONA = {
 // =========================
 // SETTINGS
 // =========================
-const GROUP_GREETING_REPLY_CHANCE = 1;
+const GROUP_GREETING_REPLY_CHANCE = 0.9;
 const GROUP_KNOWLEDGE_REPLY_CHANCE = 0.85;
 const DM_ALWAYS_REPLY = true;
 const NAME_MENTION_CHANCE = 0.3;
@@ -52,8 +52,6 @@ const KNOWLEDGE = [
     replies: {
       warm: [
         "$NOW is the core token of Bounty Temple. It powers the ecosystem and connects staking, utilities, and access to $TYT",
-        "$NOW is basically the main token in the Bounty Temple ecosystem. It sits at the center of staking, rewards, and utility",
-        "$NOW is the core ecosystem token. It ties together staking, rewards flow, and access to other parts like $TYT"
       ],
       casual: [
         "$NOW is the main token behind Bounty Temple. It powers staking, rewards, and access to ecosystem features",
@@ -536,14 +534,18 @@ const GREETINGS = {
       "how you doing!",
       "gm 😊 hope your day starts strong",
       "good morning ☀️ hope you’re doing well today",
+      "gm today's sunrise is awesome!",
+      "gm it's great to be here!",
       "gm gm ✨ wishing you a smooth day ahead"
     ],
     general: [
       "hey 👋 ",
       "hello there 😊 good to see you here",
-      "hey hey 👋 hope you’re doing well"
+      "hey hey 👋 hope you’re doing well",
+      "oh wow, nice seeing you here"
     ],
     night: [
+      "gngn!",
       "good night 🌙 rest well",
       "gn ✨ hope you get a good rest",
       "good night 😊 take it easy"
@@ -552,6 +554,7 @@ const GREETINGS = {
       "you’re welcome 😊",
       "no worries at all 👌",
       "happy to help",
+      "aww",
       "anytime ✨"
     ]
   },
@@ -564,11 +567,13 @@ const GREETINGS = {
     general: [
       "heyy 👋",
       "yoyo",
+      "how's life",
       "hey there"
     ],
     night: [
       "gn 🌙",
       "good nighttt",
+      "have a great nice!",
       "rest well"
     ],
     thanks: [
@@ -710,14 +715,14 @@ function detectTone(message, replyType) {
 
 function randomDelay(replyType) {
   if (replyType === "greeting") {
-    return Math.floor(Math.random() * 8000) + 3000;
+    return Math.floor(Math.random() * (60000 - 15000)) + 15000; // 15–60s
   }
 
   if (replyType === "knowledge") {
-    return Math.floor(Math.random() * 25000) + 8000;
+    return Math.floor(Math.random() * (120000 - 30000)) + 30000; // 30–120s
   }
 
-  return Math.floor(Math.random() * 12000) + 4000;
+  return Math.floor(Math.random() * (90000 - 20000)) + 20000;
 }
 
 function maybeLowercaseStart(reply) {
