@@ -74,7 +74,7 @@ const KNOWLEDGE = [
   {
     id: "all_in_x",
     triggers: [
-      "all in x",
+      "allinx",
       "what is allinx",
       "tell me about allinx",
       "what allinx"
