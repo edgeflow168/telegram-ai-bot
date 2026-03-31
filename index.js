@@ -10,7 +10,7 @@ const bot = new TelegramBot(TELEGRAM_TOKEN, {
 // PERSONA
 // =========================
 const PERSONA = {
-  name: "Miracle",
+  name: "MiracleClara",
   typoChance: 0.05,
   correctionChance: 0.9,
   lowercaseStartChance: 0.25,
@@ -19,17 +19,18 @@ const PERSONA = {
 // =========================
 // SETTINGS
 // =========================
-const GROUP_GREETING_REPLY_CHANCE = 0.45;
+const GROUP_GREETING_REPLY_CHANCE = 0.8;
 const GROUP_KNOWLEDGE_REPLY_CHANCE = 0.85;
 const DM_ALWAYS_REPLY = true;
 const NAME_MENTION_CHANCE = 0.3;
 
 // Working hours: 8 AM to 11 PM
-function isWithinWorkingHours() {
+/*function isWithinWorkingHours() {
   const now = new Date();
   const hour = now.getHours();
   return hour >= 8 && hour < 23;
 }
+*/
 
 // =========================
 // KNOWLEDGE BASE
