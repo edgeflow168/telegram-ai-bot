@@ -705,6 +705,7 @@ function detectTone(message, replyType) {
   if (
     msg.includes("hello") ||
     msg.includes("hi") ||
+    msg.includes("yoyo") ||
     msg.includes("hey")
   ) {
     return "warm";
