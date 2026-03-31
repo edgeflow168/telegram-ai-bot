@@ -975,7 +975,7 @@ bot.on("message", (msg) => {
   const text = msg.text;
 
   if (!text) return;
-  if (!isWithinWorkingHours()) return;
+  //if (!isWithinWorkingHours()) return;
   if (!shouldRespond(text)) return;
 
   const normalized = normalize(text);
