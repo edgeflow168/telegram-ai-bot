@@ -861,11 +861,11 @@ function scoreMatch(message, triggers) {
   return score;
 }
 
-function getLimitedScopeReply(tone) {
+/*function getLimitedScopeReply(tone) {
   const replies = {
     warm: [
       "not fully sure on that one yet, better check with the team",
-      "i don’t want to give you the wrong info on that, please wait for annoucement",
+      "i don’t want to give you the wrong info on that, please let the team answer",
       "not 100% sure from what i have right now, lets wait for announcement fam"
     ],
     casual: [
@@ -884,6 +884,7 @@ function getLimitedScopeReply(tone) {
       "lets wait for the team to clarify more about it!"
     ]
   };
+  */
 
   return pickRandom(replies[tone]);
 }
@@ -906,10 +907,10 @@ function getKnowledgeReply(text, tone) {
     return softenReply(pickRandom(best.replies[tone]), tone);
   }
 
-  if (msg.includes("?")) {
+  /*if (msg.includes("?")) {
     return getLimitedScopeReply(tone);
   }
-
+*/
   return null;
 }
 
