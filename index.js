@@ -761,7 +761,8 @@ function getGreetingReply(msg, tone) {
   if (
     msg.includes("good night") ||
     msg === "gn" ||
-    msg.startsWith("gn ")
+    msg.startsWith("gn") ||
+    msg.includes(" gn")
   ) {
     return pickRandom(stylePack.night);
   }
@@ -864,6 +865,7 @@ function shouldRespond(text) {
     "gm",
     "good morning",
     "good night",
+    "gn",
     "hello",
     "hi",
     "hey",
