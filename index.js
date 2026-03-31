@@ -532,7 +532,7 @@ const GREETINGS = {
   warm: {
     morning: [
       "gmgm",
-      "how you doing!"
+      "how you doing!",
       "gm 😊 hope your day starts strong",
       "good morning ☀️ hope you’re doing well today",
       "gm gm ✨ wishing you a smooth day ahead"
