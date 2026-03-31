@@ -109,7 +109,7 @@ const KNOWLEDGE = [
       "whats tyt",
       "what's tyt",
       "tyt",
-      "$tyt",
+      "$tyt"
     ],
     replies: {
       warm: [
@@ -271,7 +271,7 @@ const KNOWLEDGE = [
     triggers: [
       "staking",
       "stake",
-      "how staking works",
+      "how staking works"
     ],
     replies: {
       warm: [
