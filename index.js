@@ -19,7 +19,7 @@ const PERSONA = {
 // =========================
 // SETTINGS
 // =========================
-const GROUP_GREETING_REPLY_CHANCE = 0.8;
+const GROUP_GREETING_REPLY_CHANCE = 1;
 const GROUP_KNOWLEDGE_REPLY_CHANCE = 0.85;
 const DM_ALWAYS_REPLY = true;
 const NAME_MENTION_CHANCE = 0.3;
