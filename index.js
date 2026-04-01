@@ -22,7 +22,7 @@ const PERSONA = {
 const GROUP_GREETING_REPLY_CHANCE = 0.9;
 const GROUP_KNOWLEDGE_REPLY_CHANCE = 0.85;
 const DM_ALWAYS_REPLY = true;
-const NAME_MENTION_CHANCE = 0.1;
+const NAME_MENTION_CHANCE = 0;
 
 // Working hours: 8 AM to 11 PM
 /*function isWithinWorkingHours() {
