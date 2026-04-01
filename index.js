@@ -22,7 +22,7 @@ const PERSONA = {
 const GROUP_GREETING_REPLY_CHANCE = 0.9;
 const GROUP_KNOWLEDGE_REPLY_CHANCE = 0.85;
 const DM_ALWAYS_REPLY = true;
-const NAME_MENTION_CHANCE = 0.3;
+const NAME_MENTION_CHANCE = 0;
 
 // Working hours: 8 AM to 11 PM
 /*function isWithinWorkingHours() {
@@ -67,6 +67,44 @@ const KNOWLEDGE = [
         "$NOW is the core token of the Bounty Temple ecosystem, used across staking, utilities, and access mechanics",
         "$NOW serves as the main token powering key ecosystem functions",
         "$NOW is the central token connecting staking and broader ecosystem utility"
+      ]
+    }
+  },
+  {
+    id: "team_contact",
+    triggers: [
+      "team member",
+      "contact team",
+      "contact admin",
+      "need admin",
+      "need team",
+      "support",
+      "help from team",
+      "chatter service",
+      "marketing proposal",
+      "customer service",
+      "buy $now",
+      "service"
+    ],
+    replies: {
+      warm: [
+        "okay, for this one please contact @altonlim",
+        "for team help, please reach out to @altonlim",
+        "best to check directly with @altonlim on this one"
+      ],
+      casual: [
+        "for this, just message @altonlim",
+        "better reach out to @altonlim for that",
+        "you can check with @altonlim on this one"
+      ],
+      alpha: [
+        "for direct team handling, contact @altonlim"
+        "best route here is @altonlim",
+        "please take this to @altonlim directly"
+      ],
+      calm: [
+        "please contact @altonlim for direct assistance",
+        "this would be best handled by @altonlim",
       ]
     }
   },
@@ -658,7 +696,7 @@ function getDisplayName(msg) {
   return "";
 }
 
-function maybeAddName(reply, name) {
+/*function maybeAddName(reply, name) {
   if (!name) return reply;
   if (Math.random() > NAME_MENTION_CHANCE) return reply;
 
@@ -670,7 +708,7 @@ function maybeAddName(reply, name) {
 
   return pickRandom(patterns);
 }
-
+*/
 function detectTone(message, replyType) {
   const msg = normalize(message);
 
