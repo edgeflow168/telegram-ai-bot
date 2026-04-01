@@ -80,6 +80,8 @@ const KNOWLEDGE = [
       "need team",
       "chatter service",
       "buy $now",
+      "how to buy $now",
+      "how to buy now",
       "marketing proposal"
     ],
     replies: {
