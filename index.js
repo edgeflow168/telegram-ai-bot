@@ -22,7 +22,7 @@ const PERSONA = {
 const GROUP_GREETING_REPLY_CHANCE = 0.9;
 const GROUP_KNOWLEDGE_REPLY_CHANCE = 0.85;
 const DM_ALWAYS_REPLY = true;
-const NAME_MENTION_CHANCE = 0;
+const NAME_MENTION_CHANCE = 0.1;
 
 // Working hours: 8 AM to 11 PM
 /*function isWithinWorkingHours() {
@@ -696,7 +696,7 @@ function getDisplayName(msg) {
   return "";
 }
 
-/*function maybeAddName(reply, name) {
+function maybeAddName(reply, name) {
   if (!name) return reply;
   if (Math.random() > NAME_MENTION_CHANCE) return reply;
 
@@ -708,7 +708,7 @@ function getDisplayName(msg) {
 
   return pickRandom(patterns);
 }
-*/
+
 function detectTone(message, replyType) {
   const msg = normalize(message);
 
