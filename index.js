@@ -70,6 +70,41 @@ const KNOWLEDGE = [
       ]
     }
   },
+    {
+    id: "team_contact",
+    triggers: [
+      "team member",
+      "contact team",
+      "contact admin",
+      "need admin",
+      "need team",
+      "chatter service",
+      "buy $now",
+      "marketing proposal"
+    ],
+    replies: {
+      warm: [
+        "okay, for this please contact @altonlim",
+        "for team help, please reach out to @altonlim",
+        "best to check directly with @altonlim on this one"
+      ],
+      casual: [
+        "for this, just message @altonlim",
+        "contact @altonlim ^^",
+        "Nice, contact @altonlim"
+      ],
+      alpha: [
+        "For direct team handling, contact @altonlim",
+        "Best route here is @altonlim",
+        "Take this to @altonlim directly thanks"
+      ],
+      calm: [
+        "Please contact @altonlim for direct assistance",
+        "this would be best handled by @altonlim",
+        "Look for @altonlim would be good"
+      ]
+    }
+  },
   {
     id: "all_in_x",
     triggers: [
